@@ -20,12 +20,12 @@ public class VideoCell: UICollectionViewCell {
     
     public func setup(for collectionView: UICollectionView, video: Video) {
         let artist = video.artist
-        videoThumbnailImage.image = UIImage(named: video.thumbnailImage)?.imageRefit(scaledToWidth: collectionView.frame.width)
+        videoThumbnailImage.image = UIImage(named: video.thumbnailImage)?.imageRefit(collectionView.frame.width)
         avatarThumbnailImage.image = UIImage(named: artist.avatarImage)
-        avatarThumbnailImage.roundAllCorners()
+        avatarThumbnailImage.roundCorners()
         videoTitleLabel.text = video.title
         let timeAgo = (video.createDate.toDate() ?? Date()).timeAgo()
-        videoSubtitleLabel.text = "\(artist.name) • \(video.totalLikes.withCommas()) likes • \(timeAgo)"
+        videoSubtitleLabel.text = "\(artist.name) • \(video.totalLikes.withCommas) likes • \(timeAgo)"
         videoTitleLabel.sizeToFit()
         videoSubtitleLabel.sizeToFit()
     }
