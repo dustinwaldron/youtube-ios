@@ -23,9 +23,10 @@ public class VideoCell: UICollectionViewCell {
         videoThumbnailImage.image = UIImage(named: video.thumbnailImage)?.imageRefit(collectionView.frame.width)
         avatarThumbnailImage.image = UIImage(named: artist.avatarImage)
         avatarThumbnailImage.roundCorners()
+        avatarThumbnailImage.contentMode = .scaleAspectFill
         videoTitleLabel.text = video.title
         let timeAgo = (video.createDate.toDate() ?? Date()).timeAgo()
-        videoSubtitleLabel.text = "\(artist.name) • \(video.totalLikes.withCommas) likes • \(timeAgo)"
+        videoSubtitleLabel.text = "\(artist.name) • \(video.totalViews.withCommas) views • \(timeAgo)"
         videoTitleLabel.sizeToFit()
         videoSubtitleLabel.sizeToFit()
     }

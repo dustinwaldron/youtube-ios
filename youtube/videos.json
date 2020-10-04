@@ -1,0 +1,51 @@
+[{
+    "title": "Life is Good feat. Future",
+    "thumbnailImage": "Drake - Life Is Good",
+    "totalLikes": 5000,
+    "totalViews": 328919,
+    "createDate": "2020-02-21T19:32:00Z",
+    "artist": {
+        "name": "Drake",
+        "avatarImage": "drake"
+    }
+}, {
+    "title": "Stir Fry",
+    "thumbnailImage": "Migos - Stir Fry",
+    "totalLikes": 30328,
+    "totalViews": 1282222,
+    "createDate": "2017-07-21T19:32:00Z",
+    "artist": {
+        "name": "Migos",
+        "avatarImage": "migos"
+    }
+}, {
+    "title": "Homecoming",
+    "thumbnailImage": "Kanye - Homecoming",
+    "totalLikes": 49888,
+    "totalViews": 81982332,
+    "createDate": "2013-02-13T19:32:00Z",
+    "artist": {
+        "name": "Kanye",
+        "avatarImage": "kanye"
+    }
+}, {
+    "title": "Shake It Off",
+    "thumbnailImage": "Taylor Swift - Shake It Off",
+    "totalLikes": 2000000,
+    "totalViews": 819823323132,
+    "createDate": "2014-03-13T19:32:00Z",
+    "artist": {
+        "name": "Taylor Swift",
+        "avatarImage": "taylor-swift"
+    }
+}, {
+    "title": "Thrift Shop feat. Ryan Lewis",
+    "thumbnailImage": "Macklemore - Thrift Shop",
+    "totalLikes": 615983,
+    "totalViews": 81982332,
+    "createDate": "2013-06-01T19:32:00Z",
+    "artist": {
+        "name": "Macklemore",
+        "avatarImage": "macklemore"
+    }
+}]

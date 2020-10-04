@@ -11,43 +11,16 @@ class HomeController: UIViewController {
     
     @IBOutlet weak var videoCollection: UICollectionView!
     
-    let videos = [
-        Video(title: "Life is Good feat. Future",
-              thumbnailImage: "Drake - Life Is Good",
-              artist: Artist(name: "Drake",
-                             avatarImage: "drake"),
-              totalLikes: 5000,
-              createDate: "2020-02-21T19:32:00Z"),
-        Video(title: "Stir Fry",
-              thumbnailImage: "Migos - Stir Fry",
-              artist: Artist(name: "Migos",
-                             avatarImage: "migos"),
-              totalLikes: 30328,
-              createDate: "2017-07-21T19:32:00Z"),
-        Video(title: "Homecoming",
-              thumbnailImage: "Kanye - Homecoming",
-              artist: Artist(name: "Kanye",
-                             avatarImage: "kanye"),
-              totalLikes: 498828,
-              createDate: "2013-02-13T19:32:00Z"),
-        Video(title: "Shake It Off",
-              thumbnailImage: "Taylor Swift - Shake It Off",
-              artist: Artist(name: "Taylor Swift",
-                             avatarImage: "taylor-swift"),
-              totalLikes: 2000000,
-              createDate: "2014-03-13T19:32:00Z"),
-        Video(title: "Thrift Shop feat. Ryan Lewis",
-              thumbnailImage: "Macklemore - Thrift Shop",
-              artist: Artist(name: "Macklemore",
-                             avatarImage: "macklemore"),
-              totalLikes: 615983,
-              createDate: "2013-06-01T19:32:00Z")
-    ]
+    let menuBar = MenuBar()
+    let viewModel = HomeViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.setup()
         setupNavigationBar()
         setupCollectionView()
+        setupMenuBar()
+        setupNavBarItems()
     }
     
     public static func fromStoryboard() -> HomeController? {
@@ -59,6 +32,27 @@ class HomeController: UIViewController {
         videoCollection.delegate = self
         videoCollection.dataSource = self
         VideoCell.register(for: videoCollection)
+    }
+    
+    func setupNavBarItems() {
+        let moreButton = UIBarButtonItem.menuButton(self, action: #selector(handleMoreTapped), imageName: "nav_more_icon", size: 28, tintColor: UIColor.white)
+        let searchButton = UIBarButtonItem.menuButton(self, action: #selector(handleSearchTapped), imageName: "search_icon", size: 28, tintColor: UIColor.white)
+        
+        navigationItem.rightBarButtonItems = [moreButton, searchButton]
+    }
+    
+    @objc func handleSearchTapped() {
+        
+    }
+    
+    @objc func handleMoreTapped() {
+        
+    }
+    
+    func setupMenuBar() {
+        view.addSubview(menuBar)
+        view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
+        view.addConstraintsWithFormat("V:|[v0(50)]", views: menuBar)
     }
     
     func setupNavigationBar() {
@@ -73,12 +67,12 @@ class HomeController: UIViewController {
 
 extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return videos.count
+        return viewModel.videos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = videoCollection.dequeueReusableCell(withReuseIdentifier: VideoCell.identifier(), for: indexPath) as? VideoCell {
-            let video = videos[indexPath.row]
+            let video = viewModel.videos[indexPath.row]
             cell.setup(for: videoCollection, video: video)
             return cell
         }
@@ -92,7 +86,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
 
         let targetSize = CGSize(width: width, height: height)
         if let cell = videoCollection.dequeueReusableCell(withReuseIdentifier: VideoCell.identifier(), for: indexPath) as? VideoCell {
-            let video = videos[indexPath.row]
+            let video = viewModel.videos[indexPath.row]
             cell.setup(for: videoCollection, video: video)
             let size = cell.contentView.systemLayoutSizeFitting(targetSize,
                                                                 withHorizontalFittingPriority: .defaultHigh,
