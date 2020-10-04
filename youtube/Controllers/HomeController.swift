@@ -46,7 +46,9 @@ class HomeController: UIViewController {
     }
     
     @objc func handleMoreTapped() {
-        
+        let settingsView = SettingsView.loadFromNib()
+        settingsView.modalPresentationStyle = .overFullScreen
+        self.navigationController?.present(settingsView, animated: true)
     }
     
     func setupMenuBar() {

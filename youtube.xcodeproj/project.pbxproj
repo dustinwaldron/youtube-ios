@@ -31,6 +31,10 @@
 		B22D116425297BA300B77CEA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D116325297BA300B77CEA /* HomeViewModel.swift */; };
 		B22D116725297D1A00B77CEA /* Bundle+decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D116625297D1A00B77CEA /* Bundle+decode.swift */; };
 		B22D116925297E3800B77CEA /* videos.json in Resources */ = {isa = PBXBuildFile; fileRef = B22D116125297A1300B77CEA /* videos.json */; };
+		B22D117525298CB100B77CEA /* UIViewController+loadFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D117425298CB100B77CEA /* UIViewController+loadFromNib.swift */; };
+		B22D117A2529913F00B77CEA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D11782529913F00B77CEA /* SettingsView.swift */; };
+		B22D117B2529914000B77CEA /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22D11792529913F00B77CEA /* SettingsView.xib */; };
+		B22D1185252A719700B77CEA /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D1184252A719700B77CEA /* SettingsItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		B22D116125297A1300B77CEA /* videos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = videos.json; sourceTree = "<group>"; };
 		B22D116325297BA300B77CEA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B22D116625297D1A00B77CEA /* Bundle+decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+decode.swift"; sourceTree = "<group>"; };
+		B22D117425298CB100B77CEA /* UIViewController+loadFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+loadFromNib.swift"; sourceTree = "<group>"; };
+		B22D11782529913F00B77CEA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B22D11792529913F00B77CEA /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
+		B22D1184252A719700B77CEA /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,7 @@
 				B22D11472529345800B77CEA /* UIView+addConstraintsWithFormat.swift */,
 				B22D115A2529771F00B77CEA /* UIBarButtonItem+menuButton.swift */,
 				B22D116625297D1A00B77CEA /* Bundle+decode.swift */,
+				B22D117425298CB100B77CEA /* UIViewController+loadFromNib.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -135,6 +144,7 @@
 		B22D111F2529263B00B77CEA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B22D117225298C0C00B77CEA /* Settings */,
 				B22D1124252926DE00B77CEA /* VideoCell.swift */,
 				B22D1132252930E100B77CEA /* VideoCell.xib */,
 				B22D114B2529379A00B77CEA /* Home.storyboard */,
@@ -167,6 +177,16 @@
 				B22D116325297BA300B77CEA /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B22D117225298C0C00B77CEA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B22D11782529913F00B77CEA /* SettingsView.swift */,
+				B22D11792529913F00B77CEA /* SettingsView.xib */,
+				B22D1184252A719700B77CEA /* SettingsItem.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +249,7 @@
 				B22D1133252930E100B77CEA /* VideoCell.xib in Resources */,
 				B22D114C2529379A00B77CEA /* Home.storyboard in Resources */,
 				B22D116925297E3800B77CEA /* videos.json in Resources */,
+				B22D117B2529914000B77CEA /* SettingsView.xib in Resources */,
 				B22D11022529232C00B77CEA /* LaunchScreen.storyboard in Resources */,
 				B22D10FF2529232C00B77CEA /* Assets.xcassets in Resources */,
 			);
@@ -241,8 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B22D117A2529913F00B77CEA /* SettingsView.swift in Sources */,
 				B22D11482529345800B77CEA /* UIView+addConstraintsWithFormat.swift in Sources */,
 				B22D116425297BA300B77CEA /* HomeViewModel.swift in Sources */,
+				B22D1185252A719700B77CEA /* SettingsItem.swift in Sources */,
 				B22D11452529344100B77CEA /* UIImageView+roundCorners.swift in Sources */,
 				B22D11222529265400B77CEA /* Video.swift in Sources */,
 				B22D116725297D1A00B77CEA /* Bundle+decode.swift in Sources */,
@@ -254,6 +277,7 @@
 				B22D115425295F8500B77CEA /* MenuBarItemCollectionViewCell.swift in Sources */,
 				B22D11422529342A00B77CEA /* UIImage+imageRefit.swift in Sources */,
 				B22D115B2529771F00B77CEA /* UIBarButtonItem+menuButton.swift in Sources */,
+				B22D117525298CB100B77CEA /* UIViewController+loadFromNib.swift in Sources */,
 				B22D115F2529798B00B77CEA /* VideoService.swift in Sources */,
 				B22D10F62529232900B77CEA /* AppDelegate.swift in Sources */,
 				B22D113F2529341500B77CEA /* UIColor+rgb.swift in Sources */,
